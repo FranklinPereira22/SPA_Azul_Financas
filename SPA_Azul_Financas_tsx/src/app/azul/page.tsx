@@ -173,7 +173,7 @@ export default function PaginaProduto() {
                 className="relative z-20 w-[200px] h-[400px] bg-slate-900 rounded-[2.5rem] border-[6px] border-slate-900 shadow-2xl overflow-hidden"
               >
                 <Image 
-                  src="/mobile-1.png" 
+                  src="mobile/mobile-1.png" 
                   alt="Tela Mobile Principal"
                   fill
                   className="object-cover"
@@ -186,7 +186,7 @@ export default function PaginaProduto() {
                 className="absolute z-10 w-[180px] h-[360px] bg-slate-200 rounded-[2.5rem] border-[6px] border-slate-900 opacity-40 blur-[1px] translate-x-20 overflow-hidden hidden md:block"
               >
                 <Image 
-                  src="/mobile-2.png" 
+                  src="mobile/mobile-2.png" 
                   alt="Tela Mobile Secundária"
                   fill
                   className="object-cover"
