@@ -19,8 +19,9 @@
 
       body {
         font-family: var(--font-geist-sans);
-        -webkit-font-smoothing: antialiased; /* Equivale ao antialiased do layout.tsx */
+        -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
       }
 
       .font-mono {
@@ -31,7 +32,7 @@
         -webkit-backdrop-filter: blur(12px);
       }
 
-      /* Estilos para o Dark Mode manual */
+      /* Dark Mode Manual */
       body.dark-mode {
         background-color: #020617;
         color: #ffffff;
@@ -45,93 +46,61 @@
       }
       .dark-mode nav {
         border-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(2, 6, 23, 0.8);
       }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-900">
-    <nav
-      class="sticky top-0 z-50 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-between items-center transition-colors"
-    >
-      <a
-        href="azul.html"
-        class="flex items-center gap-2 group text-sm font-bold uppercase tracking-widest"
-      >
-        <i
-          data-lucide="chevron-left"
-          class="w-4 h-4 group-hover:-translate-x-1 transition-transform"
-        ></i>
-        Voltar para Home
+  <body class="bg-slate-50 text-slate-900 transition-colors duration-300">
+    
+    <nav class="sticky top-0 z-50 backdrop-blur-md border-b border-slate-200 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-white/80">
+      <a href="azul.html" class="flex items-center gap-2 group text-[10px] md:text-sm font-bold uppercase tracking-widest">
+        <i data-lucide="chevron-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+        <span class="hidden xs:inline">Voltar para Home</span>
+        <span class="xs:hidden">Voltar</span>
       </a>
 
-      <div
-        class="flex bg-slate-200/50 dark-bg-slate-800/50 p-1 rounded-xl border border-black/5"
-      >
-        <button
-          id="btn-light"
-          onclick="setModo('light')"
-          class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all bg-white text-blue-600 shadow-lg"
-        >
-          <i data-lucide="sun" class="w-3.5 h-3.5"></i> Light
+      <div class="flex bg-slate-200/50 p-1 rounded-xl border border-black/5 shrink-0">
+        <button id="btn-light" onclick="setModo('light')" class="flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all bg-white text-blue-600 shadow-lg">
+          <i data-lucide="sun" class="w-3.5 h-3.5"></i> <span class="hidden sm:inline">Light</span>
         </button>
-        <button
-          id="btn-dark"
-          onclick="setModo('dark')"
-          class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all text-slate-500"
-        >
-          <i data-lucide="moon" class="w-3.5 h-3.5"></i> Dark
+        <button id="btn-dark" onclick="setModo('dark')" class="flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all text-slate-500">
+          <i data-lucide="moon" class="w-3.5 h-3.5"></i> <span class="hidden sm:inline">Dark</span>
         </button>
       </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 py-20">
-      <header class="mb-20">
-        <span class="text-blue-600 font-black uppercase tracking-[3px] text-xs"
-          >System Architecture</span
-        >
-        <h1
-          class="text-5xl md:text-7xl font-black tracking-tighter mt-4 mb-6 uppercase"
-        >
+    <main class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <header class="mb-12 md:mb-20 text-center md:text-left">
+        <span class="text-blue-600 font-black uppercase tracking-[3px] text-[10px] md:text-xs">System Architecture</span>
+        <h1 class="text-[10vw] md:text-7xl font-black tracking-tighter mt-4 mb-6 uppercase leading-[0.9]">
           Interface do <br />
-          <span class="italic opacity-50">Painel Administrativo.</span>
+          <span class="italic opacity-50">Painel Admin.</span>
         </h1>
-        <p class="max-w-2xl text-slate-500 font-medium text-lg">
-          Explore a robustez técnica do ecossistema Azul Finanças. Telas
-          projetadas para alta performance, disponíveis em temas claro e escuro
-          com total consistência visual.
+        <p class="max-w-2xl text-slate-500 font-medium text-base md:text-lg mx-auto md:mx-0">
+          Explore a robustez técnica do ecossistema Azul Finanças. Telas projetadas para alta performance, disponíveis em temas claro e escuro.
         </p>
       </header>
 
-      <div id="grid-telas" class="grid grid-cols-1 md:grid-cols-2 gap-12"></div>
+      <div id="grid-telas" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        </div>
     </main>
 
-    <footer class="py-32 text-center border-t border-black/5">
-      <h2 class="text-3xl font-black mb-8 uppercase italic">
+    <footer class="py-20 md:py-32 text-center border-t border-black/5 px-6">
+      <h2 class="text-xl md:text-3xl font-black mb-8 uppercase italic">
         Pronto para implementação imediata.
       </h2>
-      <a
-        href="mailto:contato@growthtech.com"
-        class="bg-blue-600 text-white px-10 py-5 rounded-full font-black hover:scale-105 transition-all inline-flex items-center gap-3"
-      >
-        Solicitar Documentação Técnica <i data-lucide="arrow-up-right"></i>
+      <a href="mailto:contato@growthtech.com" class="bg-blue-600 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black hover:scale-105 transition-all inline-flex items-center gap-3 text-sm md:text-base">
+        Solicitar Documentação Técnica <i data-lucide="arrow-up-right" class="w-4 h-4 md:w-5 md:h-5"></i>
       </a>
     </footer>
 
     <footer class="bg-[#0a0c10] py-16 px-6 border-t border-white/5">
       <div class="max-w-7xl mx-auto flex flex-col items-center gap-8">
         <div class="flex items-center gap-3 opacity-50 grayscale">
-          <div
-            class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-sm"
-          >
-            G
-          </div>
-          <span
-            class="text-white text-lg font-black tracking-tighter uppercase italic"
-            >GrowthTech</span
-          >
+          <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-sm">G</div>
+          <span class="text-white text-lg font-black tracking-tighter uppercase italic">GrowthTech</span>
         </div>
-        <p
-          class="text-[10px] font-black uppercase tracking-[5px] text-slate-500 text-center"
-        >
+        <p class="text-[9px] md:text-[10px] font-black uppercase tracking-[3px] md:tracking-[5px] text-slate-500 text-center">
           © 2026 GrowthTech Engineering Lab • High Performance Software
         </p>
       </div>
@@ -139,17 +108,9 @@
 
     <script>
       const telas = [
-        {
-          id: "dashboard",
-          nome: "Dashboard Principal",
-          arquivo: "dashboard.png",
-        },
+        { id: "dashboard", nome: "Dashboard Principal", arquivo: "dashboard.png" },
         { id: "auth-login", nome: "Tela de Login", arquivo: "auth_login.png" },
-        {
-          id: "auth-cadastro",
-          nome: "Tela de Cadastro",
-          arquivo: "auth_cadastro.png",
-        },
+        { id: "auth-cadastro", nome: "Tela de Cadastro", arquivo: "auth_cadastro.png" },
         { id: "cms", nome: "Gestão de Conteúdo (CMS)", arquivo: "cms.png" },
         { id: "reports", nome: "Relatórios Avançados", arquivo: "reports.png" },
         { id: "services", nome: "Gestão de Serviços", arquivo: "services.png" },
@@ -165,20 +126,21 @@
           .map(
             (tela) => `
                 <div class="group">
-                    <div class="flex justify-between items-end mb-4">
-                        <h3 class="font-black uppercase tracking-tighter text-xl">${tela.nome}</h3>
-                        <span class="text-[10px] font-mono opacity-30">${tela.id}.tsx</span>
+                    <div class="flex justify-between items-end mb-3 md:mb-4">
+                        <h3 class="font-black uppercase tracking-tighter text-lg md:text-xl">${tela.nome}</h3>
+                        <span class="text-[9px] md:text-[10px] font-mono opacity-30">${tela.id}.tsx</span>
                     </div>
-                    <div class="card-border relative aspect-video rounded-[2rem] overflow-hidden border-[8px] transition-all duration-500 shadow-2xl group-hover:scale-[1.01] ${modoAtual === "dark" ? "border-white/5 bg-slate-900" : "border-slate-200 bg-white"}">
+                    <div class="card-border relative aspect-video rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border-[4px] md:border-[8px] transition-all duration-500 shadow-xl md:shadow-2xl group-hover:scale-[1.01] ${modoAtual === "dark" ? "border-white/5 bg-slate-900" : "border-slate-200 bg-white"}">
                         <img 
                             src="../media/painel/${modoAtual}/${tela.arquivo}" 
                             alt="${tela.nome}" 
                             class="w-full h-full object-cover object-top"
+                            loading="lazy"
                         >
                         <div class="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/5 transition-colors pointer-events-none"></div>
                     </div>
                 </div>
-            `,
+            `
           )
           .join("");
       }
@@ -191,16 +153,12 @@
 
         if (modo === "dark") {
           body.classList.add("dark-mode");
-          btnDark.className =
-            "flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all bg-blue-600 text-white shadow-lg";
-          btnLight.className =
-            "flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all text-slate-400";
+          btnDark.className = "flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all bg-blue-600 text-white shadow-lg";
+          btnLight.className = "flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all text-slate-400";
         } else {
           body.classList.remove("dark-mode");
-          btnLight.className =
-            "flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all bg-white text-blue-600 shadow-lg";
-          btnDark.className =
-            "flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-black uppercase transition-all text-slate-500";
+          btnLight.className = "flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all bg-white text-blue-600 shadow-lg";
+          btnDark.className = "flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase transition-all text-slate-500";
         }
         renderTelas();
       }
