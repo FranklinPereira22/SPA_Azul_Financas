@@ -18,12 +18,12 @@ const telas = [
 ];
 
 export default function GaleriaAdmin() {
-  const [modo, setModo] = useState<'light' | 'dark'>('dark');
+  const [modo, setModo] = useState<'light' | 'dark'>('light');
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${modo === 'dark' ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
       
-      {/* HEADER DA GALERIA */}
+      {/* NAVBAR DA GALERIA */}
       <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group text-sm font-bold uppercase tracking-widest">
           <ChevronLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
@@ -98,6 +98,20 @@ export default function GaleriaAdmin() {
           Solicitar Documentação Técnica <ArrowUpRight />
         </a>
       </footer>
+
+      {/* FOOTER PADRÃO GROWTH TECH */}
+      <footer className="bg-[#0a0c10] py-16 px-6 border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
+          <div className="flex items-center gap-3 opacity-50 grayscale">
+            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-sm">G</div>
+            <span className="text-white text-lg font-black tracking-tighter uppercase italic">GrowthTech</span>
+          </div>
+          <p className="text-[10px] font-black uppercase tracking-[5px] text-slate-500 text-center">
+            © 2026 GrowthTech Engineering Lab • High Performance Software
+          </p>
+        </div>
+      </footer>
+
     </div>
   );
 }
